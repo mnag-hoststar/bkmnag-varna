@@ -1,7 +1,7 @@
 {
 	"name":"Varna",
-	"thumbnail":"varna.png",
-	"screenshot":"varna.png",
+	"thumbnail":"thumbnail.png",
+	"screenshot":"varna-screenshot.jpg",
 	"templateType":"standard",
 	"pageTypes": ["home"],
     "tags": {
