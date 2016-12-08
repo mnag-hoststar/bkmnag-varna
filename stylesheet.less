@@ -633,20 +633,12 @@ ul.twitter {
 
 /* CONTACT FORM WIDGET */
 
-.widget.contactform form {
-	display: block;
-	margin-bottom: 20px;
-	background-color: @color-swatch1;
+.form-group {
+	margin-bottom: 1em;
 }
 
-.widget.contactform fieldset {
-	border: none;
-	padding: 0;
-}
-
-.widget.contactform fieldset label {
-	width: 100%;
-	float: left;
+.contactform label, 
+.advancedcontactform label {
 	font-family:@font-swatch5-font-family;
 	font-size:@font-swatch5-font-size;
 	font-weight:@font-swatch5-font-weight;
@@ -655,7 +647,7 @@ ul.twitter {
 	letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.contactform fieldset input {
+input {
 	height: 40px;
 	width: 100%;
 	background-color: darken(@color-swatch1,5%);
@@ -669,12 +661,7 @@ ul.twitter {
 	padding: 0;
 }
 
-.widget.contactform fieldset input:focus {
-	outline: none;
-	box-shadow: 0 0 5px @color-swatch3;
-}
-
-.widget.contactform fieldset textarea {
+textarea {
 	height: 100px;
 	width: 100%;
 	background-color: darken(@color-swatch1,5%);
@@ -691,12 +678,11 @@ ul.twitter {
 	padding: 0;
 }
 
-.widget.contactform fieldset textarea:focus {
-	outline: none;
-	box-shadow: 0 0 5px @color-swatch3;
-}
 
-.widget.contactform fieldset button.btn {
+.contactform button, 
+.contactform button.btn, 
+.advancedcontactform button, 
+.advancedcontactform button.btn {
 	padding: 9px 22px;
 	.border-radius(3px);
 	margin: 0;
@@ -707,25 +693,16 @@ ul.twitter {
 	background-color: @font-swatch7-background-color;
 	color: @font-swatch7-color;
 	text-decoration: none;
-}
-  
-.widget.contactform fieldset button.btn:hover {
-	background-color: @font-swatch7-background-color-hover;
-	cursor: pointer;
+	&:hover {
+		background-color: @font-swatch7-background-color-hover;
+		cursor: pointer;
+	}
 }
 
 /*  SIGNUPFORM WIDGET & PROFILE FORM  */
 
  .widget.signupform, .widget.profile form {
-	display: block;
 	margin-bottom: 20px;
-	background-color: @color-swatch1;
-}
-
-.widget.signupform fieldset, .widget.profile form fieldset {
-	border: none;
-	margin: 0;
-	padding: 0;
 }
 
 .widget.signupform fieldset label, .widget.profile form fieldset label {
