@@ -7,8 +7,9 @@ body {
 }
 
 .wrapper {
+	max-width: 1024px;
 	width: 90%;
-	margin: 0 5%;
+	margin: 0 auto;
 }
 
 /* ===============================
@@ -155,7 +156,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     .language-selector & {
 	    box-sizing: content-box;
     	padding: @language-padding 0;
-		max-width: 1280px;
+		max-width: 1024px;
     	width: 90%;
 		margin: 0 auto;
         
@@ -410,7 +411,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 480px) {
+			@media only screen and (max-width: 380px) {
 				display: none;
 			}
 		}
@@ -2563,14 +2564,6 @@ hr.line {
 	font-size: bkscale(@font-swatch10-font-size,0.6);
 	line-height: bkscale(@font-swatch10-line-height,0.6);
   }
-}
-
-@media only screen and (min-width: 1140px) { 
-	.wrapper {
-		width: 1024px;
-		/* 1140px - 10% for margins */
-		margin: 0 auto;
-	}
 }
 
 /* ===============================
