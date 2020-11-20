@@ -23,6 +23,83 @@ body {
 }
 
 /* ===============================
+   TYPOGRAPHY
+   =============================== */
+
+h1, h2, h3, h4, h5, h6,
+[class*="contentgroup__h"],
+.blog-post-title a {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
+}
+
+[data-name="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+ 
+blockquote {
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
+}
+
+blockquote:before {
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
+/* ===============================
    CUSTOM CSS
    =============================== */
 
@@ -60,7 +137,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
    =============================== */
 
 .bk-header {
-	margin: 40px 0;
+	padding: 40px 0;
 	background-color: transparent;
 	z-index: 99999;
 }
@@ -593,6 +670,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		-moz-transition: all 0.4s ease-out;
 		-o-transition: all 0.4s ease-out;
 		transition: all 0.4s ease-out;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
 		&:hover {
 			opacity: 1;
 		}
@@ -685,6 +767,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	color:  @font-swatch4-color;
 	line-height: @font-swatch4-line-height;
 	text-decoration: none;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.image a:hover {
@@ -704,6 +798,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	font-size: @font-swatch5-font-size;
 	line-height: @font-swatch5-line-height;
 	color: @font-swatch5-color;
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 /* ===============================
@@ -714,6 +820,22 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.button button, .blog-post-pagination-page {
     padding: 9px 22px;
+}
+
+.widget.button button,
+.blog-post-pagination-page,
+.blog-post-item .blog-post-more-link a,
+.widget.dropbox .b-wrap .btn,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.filedownload button,
+.productlist-search .btn,
+a.contentgroup__link,
+.contactform button.btn,
+.advancedcontactform button.button,
+.widget.signupform fieldset button.btn,
+.widget.profile form fieldset button.btn,
+.blog-search-form button.blog-search-submit-button {
     margin: 0 0 10px;
     border: none;
     .border-radius(3px);
@@ -723,34 +845,67 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     background-color: @font-swatch7-background-color;
     color: @font-swatch7-color;
     text-decoration: none;
+
+    .style--light & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
 }
 
-
-.widget.button button:hover, .blog-post-pagination-page:hover {
+.widget.button button:hover,
+.blog-post-pagination-page:hover,
+.widget.dropbox .b-wrap .btn:hover,
+.widget.paypalbuynow .widget.button.paypal:hover,
+.widget.tweet a:hover,
+.tweet a:active,
+.widget.filedownload button:hover,
+.blog-post-item .blog-post-more-link a:hover,
+.productlist-search .btn:hover,
+a.contentgroup__link:hover,
+.contactform button.btn:hover,
+.advancedcontactform button.button:hover,
+.widget.signupform fieldset button.btn:hover,
+.widget.profile form fieldset button.btn:hover,
+.blog-search-form button.blog-search-submit-button:hover {
     background-color: @font-swatch7-background-color-hover;
     cursor: pointer;
     text-decoration: none;
+
+    .style--light & {
+        background-color: lighten(@color--dark, 10%);
+        color: @contrast--dark;
+    }
+
+    .style--accent & {
+        background-color: lighten(@color--dark, 10%);
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: darken(@color--accent, 10%);
+        color: @contrast--accent;
+    }
 }
 
 /* Drop Box */
 
 .widget.dropbox .b-wrap .btn {
-  margin: 0;
   padding: 9px 22px 9px 45px;
-  .border-radius(3px);
   background-image: image('/images/dropbox-icon.png');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 19px center;
   margin: 2.2em auto;
-  border: none;
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .widget.dropbox .b-wrap .btn:hover {
@@ -760,22 +915,12 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 /* PAYPAL BUTTON */
 
 .widget.paypalbuynow .widget.button.paypal {
-  margin: 0;
   padding: 9px 22px 9px 45px;
-  .border-radius(3px);
   background-image: image('/images/paypal.png');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 19px center;
   margin: 2.2em auto;
-  border: none;
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .widget.paypalbuynow .widget.button.paypal:hover {
@@ -791,22 +936,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.tweet a {
   padding: 14px 22px 14px 45px;
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-decoration: none;
-  letter-spacing: 1px;
-  .border-radius(3px);
   background-size: 18px;
   background-repeat: no-repeat;
   background-position: 20px center;
-}
-
-.widget.tweet a:hover, .tweet a:active {
-  cursor: pointer;
-  background-color: @font-swatch7-background-color-hover;
 }
 
 /* CLICK TO CALL */
@@ -877,10 +1009,34 @@ hr.line {
    font-family: @font-swatch5-font-family;
    color: @color-swatch3;
    font-size: @font-swatch5-font-size;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.twitter .twitter-content p {
   color: @font-swatch5-color;
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 .widget.twitter a:hover {
@@ -892,6 +1048,18 @@ hr.line {
 	margin: 0;
 	background-color: @color-swatch1;
 	border: none;
+
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
 }
 
 .widget.twitter ul li {
@@ -903,6 +1071,21 @@ hr.line {
 	margin-bottom: 20px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid lighten(@color-swatch5,40%);
+
+    .style--light & {
+        border-color: darken(@color--light, 10%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        border-color: darken(@color--accent, 10%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        border-color: darken(@color--dark, 10%);
+        color: @contrast--dark;
+    }
 }
 
 ul.twitter {
@@ -925,12 +1108,12 @@ ul.twitter {
 }
 
 .widget.profile ul.twitter {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 
 .widget.profile ul.twitter .twitter-content {
-		padding-left: 0;
+	padding-left: 0;
 }
 
 .widget.twitter .twitter-content span a {
@@ -945,16 +1128,52 @@ ul.twitter {
 .widget.twitter .twitter-content time, .widget.twitter .twitter-content span.bk-full-name, .widget.twitter .twitter-content span, .widget.twitter .twitter-content span a {
   font-family: @font-swatch5-font-family;
   font-size: @font-swatch5-font-size;
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 .widget.twitter .twitter-content span.bk-full-name {
 	font-family: @font-swatch4-font-family;
 	color: @color-swatch3;
 	font-size: @font-swatch5-font-size;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.twitter .twitter-content span a {
    color: @color-swatch3;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.twitter .twitter-content span.bk-full-name:hover, .widget.twitter .twitter-content span a:hover {
@@ -971,8 +1190,10 @@ ul.twitter {
 	margin-bottom: 1em;
 }
 
+label,
 .contactform label, 
-.advancedcontactform label {
+.advancedcontactform label,
+.widget.signupform fieldset label {
 	font-family:@font-swatch5-font-family;
 	font-size:@font-swatch5-font-size;
 	font-weight:@font-swatch5-font-weight;
@@ -982,6 +1203,19 @@ ul.twitter {
 	width: inherit;
 	margin-bottom: .5em;
 	display: inline-block;
+    word-break: break-word;
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 input {
@@ -1013,29 +1247,35 @@ select {
 		height: 45px;
 	}
 }
+
 select[name="displayCount"] {
 	margin-bottom: 0;
 }
 
+input,
+.widget.signupform fieldset input,
+textarea,
+select {
+    .style--light & {
+        background-color: darken(@color--light, 8%);
+        color: @contrast--light;
+    }
 
-.contactform button, 
+    .style--accent & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+
+    .style--dark & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+}
+
 .contactform button.btn, 
-.advancedcontactform button, 
 .advancedcontactform button.btn {
 	padding: 9px 22px;
-	.border-radius(3px);
 	margin: 0;
-	border: none;
-	font-family: @font-swatch7-font-family;
-	font-size: @font-swatch7-font-size;
-	font-weight:@font-swatch7-font-weight;
-	background-color: @font-swatch7-background-color;
-	color: @font-swatch7-color;
-	text-decoration: none;
-	&:hover {
-		background-color: @font-swatch7-background-color-hover;
-		cursor: pointer;
-	}
 }
 
 /*  SIGNUPFORM WIDGET & PROFILE FORM  */
@@ -1044,7 +1284,8 @@ select[name="displayCount"] {
 	margin-bottom: 20px;
 }
 
-.widget.signupform fieldset label, .widget.profile form fieldset label {
+.widget.signupform fieldset label,
+.widget.profile form fieldset label {
 	width: 100%;
 	float: left;
 	font-family:@font-swatch5-font-family;
@@ -1054,12 +1295,25 @@ select[name="displayCount"] {
 	color: @font-swatch5-color;
 	letter-spacing: @font-swatch5-letter-spacing;
 	margin: 0;
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
-.widget.signupform fieldset input, .widget.profile form fieldset input {
+.widget.signupform fieldset input,
+.widget.profile form fieldset input {
 	display: inline-block;
 	height: 43px;
-	width: 30%;
+	width: 40%;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	background-color: darken(@color-swatch1,5%);
@@ -1071,38 +1325,30 @@ select[name="displayCount"] {
 	}
 }
 
-.widget.signupform fieldset input:focus, .widget.profile form fieldset input:focus {
+.widget.signupform fieldset input:focus,
+.widget.profile form fieldset input:focus {
 	outline: none;
 	box-shadow: 0 0 5px @color-swatch3;
 }
 
-.widget.signupform fieldset button.btn, .widget.profile form fieldset button.btn {
+.widget.signupform fieldset button.btn,
+.widget.profile form fieldset button.btn {
 	height: 43px;
 	position: relative;
 	top: -1px;
-	padding: 3px 22px;
+	padding: 4px 22px;
 	display: inline-block;
-	.border-radius(3px);
 	margin: 0;
-	border: none;
-	font-family: @font-swatch7-font-family;
-	font-size: @font-swatch7-font-size;
-	font-weight:@font-swatch7-font-weight;
-	background-color: @font-swatch7-background-color;
-	color: @font-swatch7-color;
-	letter-spacing: 1px;
-	text-decoration: none;
+
 	@media @tablet {
 	  top: -2px;
 	}
+
 	@media @mobile {
 	  padding: 9px 20px;
 	  position: inherit;
 	  top: 0;
 	  height: auto;
-	}
-	&:hover {
-	  background-color: @font-swatch7-background-color-hover;
 	}
 }
 
@@ -1138,6 +1384,19 @@ select[name="displayCount"] {
 			font-weight:@font-swatch5-font-weight;
 			line-height:@font-swatch5-line-height;
 			letter-spacing: @font-swatch5-letter-spacing;
+            word-break: break-word;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
 		}
 	}
 }
@@ -1149,7 +1408,7 @@ select[name="displayCount"] {
 .widget.socialicons {
 	padding: 0;
 	font-size:1em;
-	font-family:@font-swatch7-font-family;
+	font-family: @font-swatch7-font-family;
 	min-height: 30px;
 }
 
@@ -1166,10 +1425,6 @@ select[name="displayCount"] {
 	border-radius: 50px;
 }
 
-.widget.socialicons a:hover {
-	background-color: darken(@color-swatch2,10%);
-}
-
 .widget.socialicons span a {
 	display: inline-block;
 	margin-right: 6px;
@@ -1177,8 +1432,33 @@ select[name="displayCount"] {
 	background-repeat: no-repeat;
 	background-position: center;
 	margin-bottom: 6px;
+
+    .style--light & {
+        color: darken(@color--light, 15%);
+    }
+
+    .style--accent & {
+        color: darken(@color--accent, 15%);
+    }
+
+    .style--dark & {
+        color: darken(@color--dark, 15%);
+    }
+
 	&:hover {
 	  background-color: darken(@color-swatch2, 5%);
+
+        .style--light & {
+            color: darken(@color--light, 20%);
+        }
+
+        .style--accent & {
+            color: darken(@color--accent, 20%);
+        }
+
+        .style--dark & {
+            color: darken(@color--dark, 20%);
+        }
 	}
 }
 
@@ -1451,8 +1731,33 @@ footer .widget.profile .twitter span {
 			-webkit-border-radius: 50%;
 			-moz-border-radius: 50%;
 			border-radius: 50%;
+
+            .style--light & {
+                background-color: darken(@color--light, 10%);
+            }
+
+            .style--accent & {
+                background-color: darken(@color--accent, 10%);
+            }
+
+            .style--dark & {
+                background-color: lighten(@color--dark, 10%);
+            }
+
 			&.selected {
 				background-color: @color-swatch1;
+
+                .style--light & {
+                    background-color: @color--dark;
+                }
+
+                .style--accent & {
+                    background-color: @contrast--dark;
+                }
+
+                .style--dark & {
+                    background-color: @contrast--accent;
+                }
 			}
 		}
 	}
@@ -1839,7 +2144,19 @@ footer .widget.profile .twitter span {
 
 .widget.blogpostlist .blog-post-item {
 	 border-bottom: 1px dotted fade(@color-swatch7,40%);
- }
+
+     .style--light & {
+        border-color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        border-color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 25%);
+    }
+}
 
 .blog-post-item {
 	margin: 3em 0 2.5em;
@@ -1856,6 +2173,7 @@ footer .widget.profile .twitter span {
 	}/* end blog-post-feature-image-wrap */
 	.blog-post-more-link {
 		padding: 2.5em 0;
+
 		a {
 			padding: 14px 22px;
 			margin: 0 0 10px;
@@ -1867,6 +2185,7 @@ footer .widget.profile .twitter span {
 			background-color: @font-swatch7-background-color;
 			color: @font-swatch7-color;
 			text-decoration: none;
+
 			&:hover {
 				background-color: @font-swatch7-background-color-hover;
 				cursor: pointer;
@@ -1921,16 +2240,8 @@ footer .widget.profile .twitter span {
 		top: -1px;
 		padding: 8px 22px;
 		display: inline-block;
-		.border-radius(3px);
 		margin: 0;
-		border: none;
-		font-family: @font-swatch7-font-family;
-		font-size: @font-swatch7-font-size;
-		font-weight:@font-swatch7-font-weight;
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
-		letter-spacing: 1px;
-		text-decoration: none;
+
 		@media @tablet {
 		  top: -2px;
 		}
@@ -1939,9 +2250,6 @@ footer .widget.profile .twitter span {
 		  position: inherit;
 		  top: 0;
 		  height: auto;
-		}
-		&:hover {
-		  background-color: @font-swatch7-background-color-hover;
 		}
 	}
 } 
@@ -2000,9 +2308,18 @@ time.blog-post-published-date, footer.blog-post-metadata time {
 	font-size: @font-swatch5-font-size;
 	color: @font-swatch5-color;
 	line-height: @font-swatch5-line-height;
-	&:hover {
-		color: @color-swatch4;
-	}
+
+    .style--light & {
+        color: fade(@contrast--light, 90%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 90%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 90%);
+    }
 }
 
 time.blog-post-published-date {
@@ -2089,20 +2406,43 @@ footer.blog-post-metadata time {
 	.ecom-productlist-info, .ecom-featuredproducts-info {
 		padding-top: 1em;
 		border-top: 1px solid darken(@color-swatch1,7%);
+
+        .style--light & {
+            border-color: darken(@color--light, 7%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent, 7%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--dark, 7%);
+        }
+
 		@media @mobile {
 			border-top: none;
 			padding-top: 0;
 		}
-		.ecom-productslist-title, .ecom-featuredproducts-title {
+		.ecom-productslist-title, .ecom-featuredproducts-title,
+        .ecom-productlist-price, .ecom-featuredproducts-price {
 			font-family: @font-swatch5-font-family;
 			font-size: @font-swatch5-font-size;
 			font-weight: @font-swatch5-font-weight;
 			line-height: @font-swatch5-line-height;
 			color: @font-swatch4-color;
 			padding: 0;
-		}
-		.ecom-productslist-title, .ecom-featuredproducts-title {
-		  color: @font-swatch4-color;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
 		}
 	}
 	a:hover {
@@ -2110,6 +2450,18 @@ footer.blog-post-metadata time {
 		.ecom-productlist-info, .ecom-featuredproducts-info {
 			.ecom-productslist-title, .ecom-featuredproducts-title, .ecom-productlist-price, .ecom-featuredproducts-price {
 				color: lighten(@color-swatch4,30%);
+
+                .style--light & {
+                    color: fade(@contrast--light, 90%);
+                }
+
+                .style--accent & {
+                    color: fade(@contrast--accent, 90%);
+                }
+
+                .style--dark & {
+                    color: fade(@contrast--dark, 90%);
+                }
 			}
 		}
 	}
@@ -2141,6 +2493,20 @@ footer.blog-post-metadata time {
 	}
 }
 
+.product-category-items a {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
 
 /* FEATURED PRODUCTS */
 
@@ -2150,6 +2516,11 @@ footer.blog-post-metadata time {
 .ecom-featuredproducts-header h2 {
 	text-align: center;
 	padding: 1em 0;
+}
+
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
+    background-color: transparent;
 }
 
 
@@ -2433,6 +2804,18 @@ blockquote {
 hr.line {
 	background-color: fade(@color-swatch6, 25%);
 	height: 1px;
+
+    .style--light & {
+        background-color: fade(@contrast--light, 25%);
+    }
+
+    .style--accent & {
+        background-color: fade(@contrast--accent, 25%);
+    }
+
+    .style--dark & {
+        background-color: fade(@contrast--dark, 25%);
+    }
 }
 
 /* ===============================
@@ -2441,7 +2824,7 @@ hr.line {
 
 @media only screen and (max-width: 768px) { 
 	.bk-header {
-		margin: 30px 0 30px;
+		padding: 30px 0;
 		padding-bottom: 0;
 	}
 
@@ -2591,7 +2974,7 @@ hr.line {
    }
 
   .bk-header {
-	margin: 20px 0 26px;
+	padding: 20px 0 26px;
   }
 
   .lb-outerContainer {
