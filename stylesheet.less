@@ -183,6 +183,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .widget.logo {
   padding-right: 7px;
   padding-left: 0;
+
   .logo img {
 	padding-top: 7px;
   }
@@ -1945,7 +1946,8 @@ footer .widget.profile .twitter span {
 					}
 				}
 				&.menu-section ol {
-					-webkit-column-count: 1 !important;                    
+					-webkit-column-count: 1 !important;      
+					column-count: 1 !important;                    
 				}   /* end menu-items ol */
 				&.menu-item-promoted {
 					display: block;
@@ -2365,15 +2367,16 @@ footer.blog-post-metadata time {
 .widget.ecomproductslist {
 	.productlist-filter {
 		margin-bottom: 1em;
+
 		@media @mobile {
 			margin: 0;
 		}
+		
 		label {
 		  display: block;
 		  padding-left: 2px;
+		  width: 100%;
 		}
-	}
-}
 
 		.productlist-display-form {
 			display: flex;
@@ -2462,7 +2465,7 @@ footer.blog-post-metadata time {
 				}
 			}
 		}
-  }
+	}
 }
 
 .ecom-productslist-product, .ecom-featuredproducts-product {
