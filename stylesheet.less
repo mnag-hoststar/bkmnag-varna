@@ -22,6 +22,12 @@ body {
 	border-radius: @radius;
 }
 
+.appearance(@appearance: none) {
+    -webkit-appearance: @appearance;
+    -moz-appearance: @appearance;
+    appearance: @appearance;
+}
+
 /* ===============================
    TYPOGRAPHY
    =============================== */
@@ -1218,7 +1224,9 @@ label,
     }
 }
 
-input {
+input,
+textarea,
+select {
 	height: 40px;
 	background-color: darken(@color-swatch1,5%);
 	border: none;
@@ -1229,22 +1237,24 @@ input {
 
 textarea {
 	height: 100px;
-	background-color: darken(@color-swatch1,5%);
-	border: none;
-	.border-radius(3px);
-	text-indent: 8px;
 }
 
 select {
-	cursor: pointer;
-	position: relative;
-	padding: 8px;
-	background-color: darken(@color-swatch1,5%);
-	border: none;
-	height: 40px;
+	padding: 8px 2.2em 8px 8px;
+	width: 100%;
+	.appearance(none) !important;
+	background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
+	background-repeat: no-repeat;
+	background-position: right 0.5em center;
+	background-size: 1.2em;
+
 	@media @mobile {
 		width: 100%;
 		height: 45px;
+	}
+
+	&::-ms-expand {
+		display: none;
 	}
 }
 
@@ -2347,44 +2357,92 @@ footer.blog-post-metadata time {
 	}
 }
 
+		.productlist-display-form {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -5px;
+	
+			.form-group {
+				display: inline-block;
+				margin: 0;
+				padding: 0 5px 10px;
+				flex-grow: 1;
+				width: 100%/3;
+					
+				@media @tablet {
+					margin: 0;
+				}
+					
+				@media @mobile {
+					width: 100%;
+				}
 
-.productlist-search {
-  input {
-	  height: 40px;
-	  border: 1px solid @color-swatch4;
-	  background-color: @color-swatch1;
-	  font-family: @font-swatch5-font-family;
-	  font-size: @font-swatch5-font-size;
-	  color: @color-swatch5;
-	  margin-right: 5px;
-	  @media @tablet {
-		min-width: 50%;
-		margin-bottom: 20px;
-		margin-right: 0px;
-	  }
-	  @media @mobile {
-		  width: 100%;
-		  height: 45px;
-		  border: 1px solid darken(@color-swatch2,8%);
-	  }
-  }
-  .btn {
-		margin: 0;
-		border: none;
-		.border-radius(3px);
-		font-family: @font-swatch7-font-family;
-		font-size: @font-swatch7-font-size;
-		font-weight:@font-swatch7-font-weight;
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
-		text-decoration: none;
-		letter-spacing: 1px;
-		&:hover {
-		  background-color: @font-swatch7-background-color-hover;
-		  cursor: pointer;
-		}
-		@media @mobile {
-			padding: 8px 14px;
+				label {
+					@media @mobile {
+						margin-top: 1em;
+					}
+				}
+		
+				&.productlist-search {
+					display: flex;
+					flex-wrap: wrap;
+					width: auto;
+
+					label {
+						display: block;
+						padding-left: 2px;
+						flex-grow: 1;
+						width: 100%;
+					}
+		
+					input {
+						flex-grow: 1;
+						border: 1px solid @color-swatch4;
+						background-color: @color-swatch1;
+						font-family: @font-swatch5-font-family;
+						font-size: @font-swatch5-font-size;
+						color: @color-swatch5;
+						margin-right: 5px;
+					
+						@media @tablet {
+							min-width: 50%;
+							margin-bottom: 20px;
+							margin-right: 0px;
+						}
+					
+						@media @mobile {
+							width: 100%;
+							height: 45px;
+							margin-bottom: 10px;
+							border: 1px solid darken(@color-swatch2,8%);
+						}
+					}
+				
+					.btn {
+						margin: 0;
+						border: none;
+						.border-radius(3px);
+						font-family: @font-swatch7-font-family;
+						font-size: @font-swatch7-font-size;
+						font-weight:@font-swatch7-font-weight;
+						background-color: @font-swatch7-background-color;
+						color: @font-swatch7-color;
+						text-decoration: none;
+						letter-spacing: 1px;
+						height: 40px;
+			
+						&:hover {
+							background-color: @font-swatch7-background-color-hover;
+							cursor: pointer;
+						}
+			
+						@media @mobile {
+							padding: 8px 14px;
+							width: 100%;
+						}
+					}
+				}
+			}
 		}
   }
 }
