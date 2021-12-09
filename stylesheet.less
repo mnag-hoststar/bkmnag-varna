@@ -1,5 +1,10 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+@desktop-large: ~"only screen and (min-width: 1140px)";
+@desktop-small: ~"only screen and (max-width: 1024px)";
+@tablet-small: ~"only screen and (max-width: 768px)";
+@mobile-smallest: ~"only screen and (max-width: 380px)";
+
 body {
 	background-color: @color-swatch1;
 	margin: 0;
@@ -256,7 +261,7 @@ blockquote {
         font-smooth: auto;
     }
 }
-	
+
 // Inner
 
 .language-selector__inner {
@@ -271,7 +276,7 @@ blockquote {
 	        margin: 0 5%;
         }
 		
-		@media only screen and (min-width: 1140px) {
+		@media @desktop-large {
 			width: 1024px;
 		}
     }
@@ -287,7 +292,7 @@ blockquote {
 	.language-selector.language-selector--dropdown & {
     	width: 90%;
 		
-		@media only screen and (min-width: 1140px) {
+		@media @desktop-large {
 			width: 1024px;
 		}
 	    
@@ -523,7 +528,7 @@ blockquote {
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-smallest {
 				display: none;
 			}
 		}
@@ -2004,7 +2009,7 @@ select {
 				}
 
 				a {
-					@media only screen and (max-width: 1024px) {
+					@media @desktop-small {
 						padding-left: 0;
 					}
 				}
@@ -2034,7 +2039,7 @@ select {
 				}
 			}
 
-			@media only screen and (max-width: 768px) {
+			@media @tablet-small {
 				border-bottom: 1px solid fade(@color-swatch5, 20%);
 				margin: 0;
 				width: 100%;
