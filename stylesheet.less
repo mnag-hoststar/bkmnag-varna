@@ -1898,6 +1898,26 @@ textarea {
 	height: 100px;
 }
 
+input,
+.widget.signupform fieldset input,
+textarea,
+select {
+    .style--light & {
+        background-color: darken(@color--light, 8%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+
+    .style--dark & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+}
+
 select {
 	padding: 8px 2.2em 8px 8px;
 	width: 100%;
@@ -1919,26 +1939,11 @@ select {
 	&[name="displayCount"] {
 		margin-bottom: 0;
 	}
-}
-
-input,
-.widget.signupform fieldset input,
-textarea,
-select {
-    .style--light & {
-        background-color: darken(@color--light, 8%);
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        background-color: @color--light;
-        color: @contrast--light;
-    }
-
-    .style--dark & {
-        background-color: @color--light;
-        color: @contrast--light;
-    }
+	
+	option {
+		background-color: @color-swatch1;
+		color: @font-swatch5-color;
+	}
 }
 
 // Radiobuttons and Checkboxes
