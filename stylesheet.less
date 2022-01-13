@@ -3502,6 +3502,23 @@ a.ecom-product-go-to-checkout-btn {
 	width: 100%;
 }
 
+.widget.ecomproduct {
+	.product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
+}
+
 // CHECKOUT
 
 .widget.ecombasketsummary {
