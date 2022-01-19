@@ -79,7 +79,11 @@ h1, h2, h3, h4, h5, h6,
 	line-height: @font-swatch5-line-height !important;
 }
 
-p, ul, ol, li, .contentgroup__body, .widget.clicktocall a, blockquote {
+p, ul, ol, li,
+dd, pre, code,
+.contentgroup__body,
+.widget.clicktocall a,
+blockquote {
     .style--light & {
         color: fade(@contrast--light, 90%);
     }
