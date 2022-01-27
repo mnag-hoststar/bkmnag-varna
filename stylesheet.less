@@ -1856,6 +1856,21 @@ select {
     }
 }
 
+// Dropdown
+
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
 select {
 	padding: 8px 2.2em 8px 8px;
 	width: 100%;
