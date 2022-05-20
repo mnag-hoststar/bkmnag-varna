@@ -1267,8 +1267,10 @@ tr:last-child td {
 						text-overflow: inherit;
 
 						@media @tablet {
-							position: static;
 							display: none;
+							position: static;
+							max-width: none;
+							min-width: auto;
 							padding: 0;
 							max-width: 100%;
 						}
@@ -1542,6 +1544,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1631,6 +1634,8 @@ a.basket-summary-empty-cta.btn,
 .widget.clicktocall a,
 .widget.dropbox button,
 .widget.filedownload button.btn {
+	background-image: none;
+	
 	&, &:hover, &:focus {
 		background-image: none;
 		padding: 10px 14px;
@@ -1686,15 +1691,14 @@ a.basket-summary-empty-cta.btn,
 		display: inline-block;
 
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
 			height: 40px;
 			width: 40px;
 			min-height: 40px;
+			line-height: 40px;
 			border-radius: 50%;
 			text-indent: 0;
 			font-size: 0;
@@ -2048,10 +2052,17 @@ select {
 	.border-radius(3px);
 	text-indent: 8px;
 	padding: 0;
+	color: @font-swatch5-color;
+
+    .style--light &,
+	.style--accent &,
+	.style--dark & {
+		color: @font-swatch5-color;
+    }
 }
 
 textarea {
-	height: 100px;
+	min-height: 100px;
 }
 
 // Dropdown
@@ -2512,6 +2523,8 @@ select {
 	// Controls
 
 	.slideshow-widget-controls {
+		margin-bottom: 20px;
+		
 		.dot {
 			width: 11px;
 			height: 11px;
