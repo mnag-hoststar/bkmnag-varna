@@ -1575,7 +1575,8 @@ form.blog-search-form .form-group button,
 .blog-post-more-link a,
 a.basket-summary-empty-cta.btn,
 .basket-summary-continue-shopping,
-.basket-summary-submit {
+.basket-summary-submit,
+.productlist-clear-search {
 	display: inline-block;
     margin: 0;
 	padding: 9px 20px;
@@ -1694,6 +1695,16 @@ a.basket-summary-empty-cta.btn,
 	span.file-name {
 		display: block;
 		margin: 0.5em 0;
+	}
+}
+
+// Product List Clear Search
+
+.productlist-clear-search {
+	margin: 10px 10px 60px;
+
+	@media @mobile {
+		width: calc(~"100% - 20px");
 	}
 }
 
