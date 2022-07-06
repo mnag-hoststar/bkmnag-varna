@@ -430,12 +430,16 @@ blockquote {
 
 // LINE
 
-hr.line {
+hr.line,
+.content hr {
 	background-color: fade(@color-swatch6, 25%);
 	height: 1px;
+	height: 1px;
+	width: 100%;
+	border: none;
 
     .style--light & {
-        background-color: fade(@color-swatch6, 25%);
+		background-color: darken(@color-swatch2, 25%);
     }
 
     .style--accent & {
