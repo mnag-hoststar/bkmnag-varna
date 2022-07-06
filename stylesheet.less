@@ -2736,8 +2736,18 @@ footer.blog-post-metadata {
     border-top: 1px solid;
     border-bottom: 1px solid;
 
+	li.blog-post-tag {
+		display: inline-block;
+
+		a {
+			word-break: break-word;
+		}
+	}
+
 	p.blog-post-category-label,
 	p.blog-post-tags-label {
+		display: inline-block;
+
 		&:after {
 			content: ":";
 		}
