@@ -3070,35 +3070,75 @@ p.productlist-item-count {
 	}
 }
 
-// Pagination
 
-.productlist-pagination {
+
+.widget.ecomproductslist .productlist-pagination,
+.widget.ecomfeaturedproducts .productlist-pagination {
 	margin-left: 0;
-	border-top: 1px solid darken(@color-swatch1,7%);
-	padding-top: 1em;
 	margin-top: 3em;
 	margin-bottom: 5em;
+	width: 100%;
+	border-top: 1px solid darken(@color-swatch6, 10%);
+	padding-top: 1em;
+	text-align: center;
 
-	&-page {
-		font-family: @font-swatch7-font-family;
-		color: @font-swatch7-color;
-		font-size: @font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
-		line-height: @font-swatch7-line-height;
+	.style--light & {
+		border-color: darken(@color-swatch6, 10%);
+	}
+
+	.style--accent & {
+		border-color: lighten(@color--accent, 12%);
+	}
+
+	.style--dark & {
+		border-color: lighten(@color--dark, 12%);
+	}
+
+	.productlist-pagination-pages .productlist-pagination-page {
+		padding-right: 0.5em;
+	}
+
+
+	.productlist-pagination-pages .productlist-pagination-page a,
+	.productlist-pagination-pages .productlist-pagination-page.current span {
+		display: inline-block;
 		background-color: @color-swatch1;
-		border: 1px solid darken(@color-swatch1,7%);
-		margin: 5px 10px 0 0;
-		padding: 8px 18px;
-		text-decoration: none;
+		border: 1px solid darken(@color-swatch6, 10%);
+		min-width: 32px;
+		height: 32px;
+		line-height: 30px;
+		font-family: @font-swatch7-font-family;
+			
+		@media @mobile {
+			min-width: 26px;
+			height: 26px;
+			line-height: 24px;
+		}
 
-		&.current {
-			color: @color-swatch3;
-			border: 1px solid @color-swatch3;
+		.style--light & {
+			border-color: darken(@color-swatch6, 10%);
+			color: @font-swatch7-color;
+		}
+
+		.style--accent & {
+			border-color: lighten(@color--accent, 12%);
+			color: fade(@contrast--accent, 90%);
+		}
+
+		.style--dark & {
+			border-color: lighten(@color--dark, 12%);
+			color: fade(@contrast--dark, 90%);
 		}
 
 		&:hover {
-			border: 1px solid @color-swatch3;
+			text-decoration: none;
+			background-color: darken(@color-swatch1, 10%);
 		}
+	}
+
+	.productlist-pagination-pages .productlist-pagination-page.current span {
+		background: none;
+		border: none;
 	}
 }
 
